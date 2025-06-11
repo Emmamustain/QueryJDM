@@ -1,0 +1,1208 @@
+{
+  "relations": [
+    {
+      "index": 0,
+      "id": 0,
+      "code": "r_associated",
+      "description": "Il est demandé d'énumérer les termes les plus étroitement associés au mot cible... Ce mot vous fait penser à quoi ?",
+      "details": "[1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 1,
+      "id": 1,
+      "code": "r_raff_sem",
+      "description": "Raffinement sémantique vers un usage particulier du terme source",
+      "details": "[conversif : r_raff_sem-1] - [1 ≤ q=2.5 ≤ 1]"
+    },
+    {
+      "index": 2,
+      "id": 2,
+      "code": "r_raff_morpho",
+      "description": "Raffinement morphologique vers un usage particulier du terme source",
+      "details": "[1 ≤ q=4 ≤ 1]"
+    },
+    {
+      "index": 3,
+      "id": 3,
+      "code": "r_domain",
+      "description": "Il est demandé d'énumérer les domaines relatifs au mot cible. Par exemple, pour 'corner', on pourra donner les domaines 'football' ou 'sport'.",
+      "details": "[conversif : r_domain-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 4,
+      "id": 4,
+      "code": "r_pos",
+      "description": "Partie du discours (Nom, Verbe, Adjectif, Adverbe, etc.)",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 5,
+      "id": 5,
+      "code": "r_syn",
+      "description": "Il est demandé d'énumérer les synonymes ou quasi-synonymes de ce terme.",
+      "details": "[conversif : r_syn] - [1 ≤ q=1.62 ≤ 5]"
+    },
+    {
+      "index": 6,
+      "id": 6,
+      "code": "r_isa",
+      "description": "Il est demandé d'énumérer les GENERIQUES/hyperonymes du terme. Par exemple, 'animal' et 'mammifère' sont des génériques de 'chat'.",
+      "details": "[conversif : r_hypo] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 7,
+      "id": 7,
+      "code": "r_anto",
+      "description": "Il est demandé d'énumérer des contraires du terme. Par exemple, 'chaud' est le contraire de 'froid'.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 8,
+      "id": 8,
+      "code": "r_hypo",
+      "description": "Il est demandé d'énumérer des SPECIFIQUES/hyponymes du terme. Par exemple, 'mouche', 'abeille', 'guêpe' pour 'insecte'.",
+      "details": "[conversif : r_isa] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 9,
+      "id": 9,
+      "code": "r_has_part",
+      "description": "Il faut donner des PARTIES/constituants/éléments (a pour méronymes) du mot cible. Par exemple, 'voiture' a comme parties : 'porte', 'roue', 'moteur', ...",
+      "details": "[conversif : r_holo] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 10,
+      "id": 10,
+      "code": "r_holo",
+      "description": "Il est démandé d'énumérer des 'TOUT' (a pour holonymes) de l'objet en question. Pour 'main', on aura 'bras', 'corps', 'personne', etc... Le tout est aussi l'ensemble comme 'classe' pour 'élève'.",
+      "details": "[conversif : r_has_part] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 11,
+      "id": 11,
+      "code": "r_locution",
+      "description": "A partir d'un terme, il est demandé d'énumérer les locutions, expression ou mots composés en rapport avec ce terme. Par exemple, pour 'moulin', on pourra avoir 'moulin à vent', 'moulin à eau', 'moulin à café'. Pour 'vendre', on pourra avoir 'vendre la peau de l'ours avant de l'avoir tué', 'vendre à perte', etc..",
+      "details": "[1 ≤ q=1 ≤ 3]"
+    },
+    {
+      "index": 12,
+      "id": 12,
+      "code": "r_flpot",
+      "description": "(relation interne) potentiel de relation",
+      "details": "[1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 13,
+      "id": 13,
+      "code": "r_agent",
+      "description": "L'agent (qu'on appelle aussi le sujet) est l'entité qui effectue l'action, OU la subit pour des formes passives ou des verbes d'état. Par exemple, dans - Le chat mange la souris -, l'agent est le chat. Des agents typiques de 'courir' peuvent être 'sportif', 'enfant',... (manger r_agent chat)",
+      "details": "[conversif : r_agent-1] - [2 ≤ q=5.44 ≤ 10]"
+    },
+    {
+      "index": 14,
+      "id": 14,
+      "code": "r_patient",
+      "description": "Le patient (qu'on appelle aussi l'objet) est l'entité qui subit l'action. Par exemple dans - Le chat mange la souris -, le patient est la souris. Des patients typiques de manger peuvent être 'viande', 'légume', 'pain', ... (manger r_patient pain)",
+      "details": "[conversif : r_patient-1] - [2 ≤ q=5.93 ≤ 10]"
+    },
+    {
+      "index": 15,
+      "id": 15,
+      "code": "r_lieu",
+      "description": "Il est demandé d'énumérer les LIEUX typiques où peut se trouver le terme/objet en question. (carotte r_lieu potager)",
+      "details": "[conversif : r_lieu-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 16,
+      "id": 16,
+      "code": "r_instr",
+      "description": "L'instrument est l'objet avec lequel on fait l'action. Dans - Il mange sa salade avec une fourchette -, fourchette est l'instrument. Des instruments typiques de 'tuer' peuvent être 'arme', 'pistolet', 'poison', ... (couper r_instr couteau)",
+      "details": "[conversif : r_instr-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 17,
+      "id": 17,
+      "code": "r_carac",
+      "description": "Pour un terme donné, souvent un objet, il est demandé d'en énumérer les CARACtéristiques (adjectifs) possibles/typiques. Par exemple, 'liquide', 'froide', 'chaude', pour 'eau'.",
+      "details": "[conversif : r_carac-1] - [1 ≤ q=4.46 ≤ 5]"
+    },
+    {
+      "index": 18,
+      "id": 18,
+      "code": "r_data",
+      "description": "Informations diverses (plutôt d'ordre lexicales)",
+      "details": "[1 ≤ q=2 ≤ 1]"
+    },
+    {
+      "index": 19,
+      "id": 19,
+      "code": "r_lemma",
+      "description": "Le lemme (par exemple 'mangent a pour lemme 'manger' ; 'avions' a pour lemme 'avion' ou 'avoir').",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 20,
+      "id": 20,
+      "code": "r_has_magn",
+      "description": "La magnification ou amplification, par exemple - forte fièvre - ou - fièvre de cheval - pour fièvre. Ou encore - amour fou - pour amour, - peur bleue - pour peur.",
+      "details": "[conversif : r_has_antimagn] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 21,
+      "id": 21,
+      "code": "r_has_antimagn",
+      "description": "L'inverse de la magnification, par exemple - bruine - pour pluie.",
+      "details": "[conversif : r_has_magn] - [1 ≤ q=1.08 ≤ 2]"
+    },
+    {
+      "index": 22,
+      "id": 22,
+      "code": "r_family",
+      "description": "Des mots de la même famille lexicale sont demandés (dérivation morphologique, par exemple). Par exemple, pour 'lait' on pourrait mettre 'laitier', 'laitage', 'laiterie', etc.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 23,
+      "id": 23,
+      "code": "r_carac-1",
+      "description": "Quels sont les objets (des noms) possédant typiquement/possiblement la caractérisque suivante ? Par exemple, 'soleil', 'feu', pour 'chaud'.",
+      "details": "[conversif : r_carac] - [1 ≤ q=7.23 ≤ 10]"
+    },
+    {
+      "index": 24,
+      "id": 24,
+      "code": "r_agent-1",
+      "description": "Que peut faire ce SUJET ? (par exemple chat => miauler, griffer, etc.) (chat r_agent-1 manger)",
+      "details": "[conversif : r_agent] - [1 ≤ q=7.13 ≤ 10]"
+    },
+    {
+      "index": 25,
+      "id": 25,
+      "code": "r_instr-1",
+      "description": "L'instrument est l'objet avec lequel on fait l'action. Dans - Il mange sa salade avec une fourchette -, fourchette est l'instrument. On demande ici, ce qu'on peut faire avec un instrument donné... (scie r_instr-1 scier)",
+      "details": "[conversif : r_instr] - [1 ≤ q=1 ≤ 10]"
+    },
+    {
+      "index": 26,
+      "id": 26,
+      "code": "r_patient-1",
+      "description": "(inverse de r_patient) Que peut-on faire à cet OBJET. Pour 'pomme', on pourrait avoir 'manger', 'croquer', 'couper', 'éplucher', etc. (pomme r_patient-1 manger)",
+      "details": "[conversif : r_patient] - [1 ≤ q=1 ≤ 10]"
+    },
+    {
+      "index": 27,
+      "id": 27,
+      "code": "r_domain-1",
+      "description": "inverse de r_domain : à un domaine, on associe des termes",
+      "details": "[conversif : r_domain] - [1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 28,
+      "id": 28,
+      "code": "r_lieu-1",
+      "description": "A partir d'un lieu, il est demandé d'énumérer ce qui peut typiquement s'y trouver. Par exemple : Paris r_lieu-1 tour Eiffel",
+      "details": "[conversif : r_lieu] - [1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 29,
+      "id": 29,
+      "code": "r_chunk_pred",
+      "description": "(interne) d'un prédicat quel chunk ?",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 30,
+      "id": 30,
+      "code": "r_lieu_action",
+      "description": "A partir d'un lieu, énumérer les actions typiques possibles dans ce lieu.",
+      "details": "[conversif : r_action_lieu] - [1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 31,
+      "id": 31,
+      "code": "r_action_lieu",
+      "description": "A partir d'une action (un verbe), énumérer les lieux typiques possibles où peut être réalisée cette action.",
+      "details": "[conversif : r_lieu_action] - [1 ≤ q=2.25 ≤ 6]"
+    },
+    {
+      "index": 32,
+      "id": 32,
+      "code": "r_sentiment",
+      "description": "Pour un terme donné, évoquer des mots liés à des SENTIMENTS ou des EMOTIONS que vous pourriez associer à ce terme. Par exemple, la joie, le plaisir, le dégoût, la peur, la haine, l'amour, l'indifférence, l'envie, avoir peur, horrible, etc.",
+      "details": "[conversif : r_sentiment-1] - [1 ≤ q=7.7 ≤ 10]"
+    },
+    {
+      "index": 33,
+      "id": 33,
+      "code": "r_error",
+      "description": "lien d'erreur",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 34,
+      "id": 34,
+      "code": "r_manner",
+      "description": "De quelles MANIERES peut être effectuée l'action (le verbe) proposée. Il s'agira d'un adverbe ou d'un équivalent comme une locution adverbiale, par exemple : 'rapidement', 'sur le pouce', 'goulûment', 'salement' ... pour 'manger'.",
+      "details": "[conversif : r_manner-1] - [1 ≤ q=4.36 ≤ 6]"
+    },
+    {
+      "index": 35,
+      "id": 35,
+      "code": "r_meaning/glose",
+      "description": "Quels SENS/SIGNIFICATIONS pouvez vous donner au terme proposé. Il s'agira de termes (des gloses) évoquant chacun des sens possibles, par exemple : 'forces de l'ordre', 'contrat d'assurance', 'police typographique', ... pour 'police'.",
+      "details": "[2 ≤ q=2.5 ≤ 4]"
+    },
+    {
+      "index": 36,
+      "id": 36,
+      "code": "r_infopot",
+      "description": "Information sémantique potentielle",
+      "details": "[1 ≤ q=0.85 ≤ 2]"
+    },
+    {
+      "index": 37,
+      "id": 37,
+      "code": "r_telic_role",
+      "description": "Le rôle télique indique la fonction du nom ou du verbe. Par exemple, couper pour couteau, scier pour scie, etc. C'est le rôle qu'on lui destine communément pour un artéfact, ou bien un rôle qu'on peut attribuer à un objet naturel (réchauffer, éclairer pour soleil).",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 38,
+      "id": 38,
+      "code": "r_agentif_role",
+      "description": "De quelle(s) manière(s) peut être CRÉE/CONSTRUIT le terme suivant. On demande des verbes transitifs (le terme en est un complément d'objet) qui DONNENT NAISSANCE à l'entité désignée par le terme, par exemple, 'construire' pour 'maison', 'rédiger'/'imprimer' pour 'livre' ou 'lettre'.",
+      "details": "[1 ≤ q=6.48 ≤ 10]"
+    },
+    {
+      "index": 39,
+      "id": 39,
+      "code": "r_verbe-action",
+      "description": "du verbe vers l'action. Par exemple, construire -> construction , jardiner -> jardinage . C'est un terme directement dérivé (ayant la même racine). Applicable que pour un verbe et inverse de la relation 40 (action vers verbe).",
+      "details": "[conversif : r_action-verbe] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 40,
+      "id": 40,
+      "code": "r_action-verbe",
+      "description": "de l'action vers le verbe. Par exemple, construction -> construire, jardinage -> jardiner. C'est un terme directement dérivé (ayant la même racine). Applicable que pour un nom et inverse de la relation 39 (verbe vers action).",
+      "details": "[conversif : r_verbe-action] - [1 ≤ q=0.99 ≤ 2]"
+    },
+    {
+      "index": 41,
+      "id": 41,
+      "code": "r_has_conseq",
+      "description": "B (que vous devez donner) est une CONSEQUENCE possible de A. A et B sont des verbes ou des noms. Exemples : tomber -> se blesser ; faim -> voler ; allumer -> incendie ; négligence --> accident ; etc.",
+      "details": "[conversif : r_has_causatif] - [1 ≤ q=6.93 ≤ 10]"
+    },
+    {
+      "index": 42,
+      "id": 42,
+      "code": "r_has_causatif",
+      "description": "B (que vous devez donner) est une CAUSE possible de A. A et B sont des verbes ou des noms. Exemples : se blesser -> tomber ; vol -> pauvreté ; incendie -> négligence ; mort --> maladie ; etc.",
+      "details": "[conversif : r_has_conseq] - [1 ≤ q=7.61 ≤ 10]"
+    },
+    {
+      "index": 43,
+      "id": 43,
+      "code": "r_adj-verbe",
+      "description": "Pour un adjectif de potentialité/possibilité, son verbe correspondant. Par exemple pour 'lavable' -> 'laver'",
+      "details": "[conversif : r_verbe-adj] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 44,
+      "id": 44,
+      "code": "r_verbe-adj",
+      "description": "Pour un verbe, son adjectif de potentialité/possibilité correspondant. Par exemple pour 'laver' -> 'lavable'",
+      "details": "[conversif : r_adj-verbe] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 45,
+      "id": 45,
+      "code": "r_chunk_sujet",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 46,
+      "id": 46,
+      "code": "r_chunk_objet",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 47,
+      "id": 47,
+      "code": "r_chunk_loc",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 48,
+      "id": 48,
+      "code": "r_chunk_instr",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 49,
+      "id": 49,
+      "code": "r_time",
+      "description": "Donner une valeur temporelle -quel moment- peut-on associer au terme indiqué (par exemple 'dormir' -> nuit, 'bronzer' -> été, 'fatigue' -> 'soir')",
+      "details": "[1 ≤ q=1.48 ≤ 2]"
+    },
+    {
+      "index": 50,
+      "id": 50,
+      "code": "r_object>mater",
+      "description": "Quel est la ou les MATIERE/SUBSTANCE pouvant composer l'objet qui suit. Par exemple, 'bois' pour 'poutre'.",
+      "details": "[conversif : r_mater>object] - [1 ≤ q=1 ≤ 5]"
+    },
+    {
+      "index": 51,
+      "id": 51,
+      "code": "r_mater>object",
+      "description": "Quel est la ou les CHOSES qui sont composés de la MATIERE/SUBSTANCE qui suit (exemple 'bois' -> poutre, table, ...).",
+      "details": "[conversif : r_object>mater] - [1 ≤ q=5.17 ≤ 5]"
+    },
+    {
+      "index": 52,
+      "id": 52,
+      "code": "r_successeur-time",
+      "description": "Qu'est ce qui peut SUIVRE temporellement (par exemple Noêl -> jour de l'an, guerre -> paix, jour -> nuit, pluie -> beau temps, repas -> sieste, etc) le terme suivant :",
+      "details": "[conversif : r_has_predecesseur-time] - [1 ≤ q=5.51 ≤ 6]"
+    },
+    {
+      "index": 53,
+      "id": 53,
+      "code": "r_make",
+      "description": "Que peut PRODUIRE le terme ? (par exemple abeille -> miel, usine -> voiture, agriculteur -> blé, moteur -> gaz carbonique ...)",
+      "details": "[conversif : r_product_of] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 54,
+      "id": 54,
+      "code": "r_product_of",
+      "description": "Le terme est le RESULTAT/PRODUIT de qui/quoi ?",
+      "details": "[conversif : r_make] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 55,
+      "id": 55,
+      "code": "r_against",
+      "description": "A quoi le terme suivant S'OPPOSE/COMBAT/EMPECHE ? Par exemple, un médicament s'oppose à la maladie.",
+      "details": "[conversif : r_against-1] - [1 ≤ q=1.98 ≤ 2]"
+    },
+    {
+      "index": 56,
+      "id": 56,
+      "code": "r_against-1",
+      "description": "Inverse de r_against (s'oppose à) - a comme opposition active (S'OPPOSE/COMBAT/EMPECHE). Par exemple, une bactérie à comme opposition antibiotique.",
+      "details": "[conversif : r_against] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 57,
+      "id": 57,
+      "code": "r_implication",
+      "description": "Qu'est-ce que le terme implique logiquement ? Par exemple : ronfler implique dormir, courir implique se déplacer, câlin implique contact physique. (attention ce n'est pas la cause ni le but...)",
+      "details": "[1 ≤ q=2 ≤ 2]"
+    },
+    {
+      "index": 58,
+      "id": 58,
+      "code": "r_quantificateur",
+      "description": "Quantificateur(s) typique(s) pour le terme, indiquant une quantité. Par exemples, sucre -> grain, morceau - sel -> grain, pincée - herbe -> brin, touffe - ...",
+      "details": "[conversif : r_quantificateur-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 59,
+      "id": 59,
+      "code": "r_masc",
+      "description": "L'équivalent masculin du terme : lionne --> lion.",
+      "details": "[conversif : r_fem] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 60,
+      "id": 60,
+      "code": "r_fem",
+      "description": "L'équivalent féminin du terme : lion --> lionne.",
+      "details": "[conversif : r_masc] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 61,
+      "id": 61,
+      "code": "r_equiv",
+      "description": "Termes strictement équivalents/identiques : acronymes et sigles (PS -> parti socialiste), apocopes (ciné -> cinéma), entités nommées (Louis XIV -> Le roi soleil), etc. (attention il ne s'agit pas de synonyme)",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 62,
+      "id": 62,
+      "code": "r_manner-1",
+      "description": "Quelles ACTIONS (verbes) peut-on effectuer de cette manière ? Par exemple, rapidement -> courir, manger, ...",
+      "details": "[conversif : r_manner] - [1 ≤ q=4.51 ≤ 6]"
+    },
+    {
+      "index": 63,
+      "id": 63,
+      "code": "r_agentive_implication",
+      "description": "Les verbes ou actions qui sont impliqués dans la création de l'objet. Par exemple pour 'construire' un livre, il faut, imprimer, relier, brocher, etc. Il s'agit des étapes nécessaires à la réalisation du rôle agentif.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 64,
+      "id": 64,
+      "code": "r_has_instance",
+      "description": "Une instance d'un 'type' est un individu particulier de ce type. Il s'agit d'une entité nommée (personne, lieu, organisation, etc) - par exemple, 'cheval' a pour instance possible 'Jolly Jumper', ou encore 'transatlantique' a pour instance possible 'Titanic'.",
+      "details": "[conversif : r_is_instance_of] - [1 ≤ q=1 ≤ 3]"
+    },
+    {
+      "index": 65,
+      "id": 65,
+      "code": "r_verb_real",
+      "description": "Pour un verbe, celui qui réalise l'action (par dérivation morphologique). Par exemple, chasser -> chasseur, naviguer -> navigateur.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 66,
+      "id": 66,
+      "code": "r_chunk_head",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 67,
+      "id": 67,
+      "code": "r_similar",
+      "description": "Similaire/ressemble à ; par exemple le congre est similaire à une anguille, ...",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 68,
+      "id": 68,
+      "code": "r_set>item",
+      "description": "Quel est l'ELEMENT qui compose l'ENSEMBLE qui suit (par exemple, un essaim est composé d'abeilles)",
+      "details": "[conversif : r_item>set] - [1 ≤ q=0.91 ≤ 2]"
+    },
+    {
+      "index": 69,
+      "id": 69,
+      "code": "r_item>set",
+      "description": "Quel est l'ENSEMBLE qui est composé de l'ELEMENT qui suit (par exemple, un essaim est composé d'abeilles)",
+      "details": "[conversif : r_set>item] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 70,
+      "id": 70,
+      "code": "r_processus>agent",
+      "description": "Quel est l'acteur de ce processus/événement ? Par exemple, 'nettoyage' peut avoir comme acteur 'technicien de surface'.",
+      "details": "[conversif : r_processus>agent-1] - [1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 71,
+      "id": 71,
+      "code": "r_variante",
+      "description": "Variantes du termes cible. Par exemple, yaourt, yahourt, ou encore évènement, événement.",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 72,
+      "id": 72,
+      "code": "r_syn_strict",
+      "description": "Termes strictement substituables, pour des termes hors du domaine général, et pour la plupart des noms (exemple : endométriose intra-utérine --> adénomyose)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 73,
+      "id": 73,
+      "code": "r_is_smaller_than",
+      "description": "Qu'est-ce qui est physiquement plus gros que... (la comparaison doit être pertinente)",
+      "details": "[conversif : r_is_bigger_than] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 74,
+      "id": 74,
+      "code": "r_is_bigger_than",
+      "description": "Qu'est-ce qui est physiquement moins gros que... (la comparaison doit être pertinente)",
+      "details": "[conversif : r_is_smaller_than] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 75,
+      "id": 75,
+      "code": "r_accomp",
+      "description": "Est souvent accompagné de, se trouve avec... Par exemple : Astérix et Obelix, le pain et le fromage, les fraises et la chantilly.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 76,
+      "id": 76,
+      "code": "r_processus>patient",
+      "description": "Quel est le patient de ce processus/événement ? Par exemple, 'découpe' peut avoir comme patient 'viande'.",
+      "details": "[conversif : r_processus>patient-1] - [1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 77,
+      "id": 77,
+      "code": "r_verb_ppas",
+      "description": "Le participe passé (au masculin singulier) du verbe infinitif. Par exemple, pour manger => mangé",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 78,
+      "id": 78,
+      "code": "r_cohypo",
+      "description": "Il est demandé d'énumérer les CO-HYPONYMES du terme. Par exemple, 'chat' et 'tigre' sont des co-hyponymes (de 'félin').",
+      "details": "[conversif : r_hypo] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 79,
+      "id": 79,
+      "code": "r_verb_ppre",
+      "description": "Le participe présent (au masculin singulier) du verbe infinitif. Par exemple, pour manger => mangeant",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 80,
+      "id": 80,
+      "code": "r_processus>instr",
+      "description": "Quel est l'instrument/moyen de ce processus/événement ? Par exemple, 'découpe' peut avoir comme instrument 'couteau'.",
+      "details": "[conversif : r_processus>instr-1] - [1 ≤ q=1.44 ≤ 2]"
+    },
+    {
+      "index": 81,
+      "id": 81,
+      "code": "r_pref_form",
+      "description": "Indique une forme préférée",
+      "details": "[1 ≤ q=1.44 ≤ 2]"
+    },
+    {
+      "index": 82,
+      "id": 82,
+      "code": "r_interact_with",
+      "description": "Indique avec quoi antécédent peut interagir.",
+      "details": "[1 ≤ q=1.44 ≤ 2]"
+    },
+    {
+      "index": 83,
+      "id": 83,
+      "code": "r_alias",
+      "description": "Indique que les deux termes sont identiques, le 2e est un alias du premier. Utile pour synchroniser des termes ou raffinement (éventuellement poly).",
+      "details": "[1 ≤ q=0 ≤ 1]"
+    },
+    {
+      "index": 84,
+      "id": 84,
+      "code": "r_has_euphemisme",
+      "description": "Moins intense, euphémisme. Exemple : être mort => être fatigué",
+      "details": "[1 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 85,
+      "id": 99,
+      "code": "r_der_morpho",
+      "description": "Des termes dériviés morphologiquement sont demandés). Par exemple, pour 'lait' on pourrait mettre 'laitier', 'laitage', 'laiterie', etc. (mais pas 'lactose'). Pour 'jardin', on mettra 'jardinier', 'jardinage', 'jardiner', etc.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 86,
+      "id": 100,
+      "code": "r_has_auteur",
+      "description": "Quel est l'auteur de l'oeuvre suivante ?",
+      "details": "[conversif : r_has_auteur-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 87,
+      "id": 101,
+      "code": "r_has_personnage",
+      "description": "Quels sont les personnages présents dans l'oeuvre qui suit ?",
+      "details": "[1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 88,
+      "id": 102,
+      "code": "r_can_eat",
+      "description": "De quoi peut se nourrir l'animal suivant ?",
+      "details": "[1 ≤ q=5 ≤ 2]"
+    },
+    {
+      "index": 89,
+      "id": 103,
+      "code": "r_has_actors",
+      "description": "A comme acteurs (pour un film ou similaire).",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 90,
+      "id": 104,
+      "code": "r_deplac_mode",
+      "description": "Mode de déplacement. chat r_deplac_node marche",
+      "details": "[1 ≤ q=2 ≤ 2]"
+    },
+    {
+      "index": 91,
+      "id": 105,
+      "code": "r_has_interpret",
+      "description": "Interprète de personnages (cinéma ou théâtre)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 92,
+      "id": 106,
+      "code": "r_has_color",
+      "description": "A comme couleur(s)... chat r_color noir",
+      "details": "[2 ≤ q=8.79 ≤ 10]"
+    },
+    {
+      "index": 93,
+      "id": 107,
+      "code": "r_has_cible",
+      "description": "Cible de la maladie : myxomatose => lapin, rougeole => enfant, ...",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 94,
+      "id": 108,
+      "code": "r_has_symptomes",
+      "description": "Symptômes de la maladie : myxomatose => yeux rouges, rougeole => boutons, ...",
+      "details": "[conversif : r_symptomes-1] - [1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 95,
+      "id": 109,
+      "code": "r_has_predecesseur-time",
+      "description": "Qu'est ce qui peut PRECEDER temporellement (par exemple - inverse de successeur) le terme suivant :",
+      "details": "[conversif : r_successeur-time] - [2 ≤ q=6 ≤ 6]"
+    },
+    {
+      "index": 96,
+      "id": 110,
+      "code": "r_has_diagnostic",
+      "description": "Diagnostic pour la maladie : diabète => prise de sang, rougeole => examen clinique, ...",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 97,
+      "id": 111,
+      "code": "r_has_predecesseur-space",
+      "description": "Qu'est ce qui peut PRECEDER spatialement (par exemple - inverse de successeur spatial) le terme suivant :",
+      "details": "[conversif : r_has_successeur-space] - [2 ≤ q=6 ≤ 6]"
+    },
+    {
+      "index": 98,
+      "id": 112,
+      "code": "r_has_successeur-space",
+      "description": "Qu'est ce qui peut SUIVRE spatialement (par exemple Locomotive à vapeur -> tender, wagon etc.) le terme suivant :",
+      "details": "[conversif : r_has_predecesseur-space] - [2 ≤ q=5 ≤ 6]"
+    },
+    {
+      "index": 99,
+      "id": 113,
+      "code": "r_has_social_tie_with",
+      "description": "Relation sociale/familliale entre les individus... (annotation pour la nature exacte : frère, mari, etc.) Julie Depardieu r_social_tie>fille Gérard Deparidieu ; Gérard Deparidieu r_social_tie>père Julie Depardieu",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 100,
+      "id": 114,
+      "code": "r_tributary",
+      "description": "Tributaire de (physique ou spatial).",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 101,
+      "id": 115,
+      "code": "r_sentiment-1",
+      "description": "Pour un SENTIMENT ou EMOTION donné, il est demandé d'énumérer les termes que vous pourriez associer. Par exemple, pour 'joie', on aurait 'cadeau', 'naissance', 'bonne nouvelle', etc.",
+      "details": "[conversif : r_sentiment] - [5 ≤ q=5 ≤ 10]"
+    },
+    {
+      "index": 102,
+      "id": 116,
+      "code": "r_linked-with",
+      "description": "A quoi est-ce relié (un wagon est relié à un autre wagon ou à une locomotive) ?",
+      "details": "[5 ≤ q=6.01 ≤ 10]"
+    },
+    {
+      "index": 103,
+      "id": 117,
+      "code": "r_foncteur",
+      "description": "La fonction de ce terme par rapport à d'autres. Pour les prépositions notamment, 'chez' => relation r_location. (demande un type de relation comme valeur)",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 104,
+      "id": 118,
+      "code": "r_comparison",
+      "description": "(interne)",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 105,
+      "id": 119,
+      "code": "r_but",
+      "description": "But de l'action (nom ou verbe)",
+      "details": "[conversif : r_but-1] - [1 ≤ q=10 ≤ 10]"
+    },
+    {
+      "index": 106,
+      "id": 120,
+      "code": "r_but-1",
+      "description": "Quel sont les actions ou verbes qui ont le terme cible comme but ?",
+      "details": "[conversif : r_but] - [1 ≤ q=9.05 ≤ 10]"
+    },
+    {
+      "index": 107,
+      "id": 121,
+      "code": "r_own",
+      "description": "Que POSSEDE le terme suivant ? (un soldat possède un fusil, une cavalière des bottes, ... soldat r_own fusil, ...)",
+      "details": "[conversif : r_own-1] - [0.5 ≤ q=2.5 ≤ 2]"
+    },
+    {
+      "index": 108,
+      "id": 122,
+      "code": "r_own-1",
+      "description": "Par qui ou quoi EST POSSEDE le terme suivant ? (par exemple, fusil r_own-1 soldat)",
+      "details": "[conversif : r_own] - [0.5 ≤ q=0.97 ≤ 2]"
+    },
+    {
+      "index": 109,
+      "id": 123,
+      "code": "r_verb_aux",
+      "description": "Auxiliaire utilisé pour ce verbe",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 110,
+      "id": 124,
+      "code": "r_predecesseur-logic",
+      "description": "Qu'est ce qui peut PRECEDER logiquement (par exemple : A précède B - inverse de successeur logique) le terme suivant :",
+      "details": "[2 ≤ q=6 ≤ 6]"
+    },
+    {
+      "index": 111,
+      "id": 125,
+      "code": "r_successeur-logic",
+      "description": "Qu'est ce qui peut SUIVRE logiquement (par exemple A -> B, C etc.) le terme suivant :",
+      "details": "[2 ≤ q=4.55 ≤ 6]"
+    },
+    {
+      "index": 112,
+      "id": 126,
+      "code": "r_isa-incompatible",
+      "description": "Relation d'incompatibilité pour les génériques. Si A r_isa-incompatible B alors X ne peut pas être à la fois A et B ou alors X est polysémique. Par exemple, poisson r_isa-incompatible oiseau. Colin est à la fois un oiseau et un poisson, donc colin est polysémique.",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 113,
+      "id": 127,
+      "code": "r_incompatible",
+      "description": "Relation d'incompatibilité, ne doivent pas être présents ensemble. Par exemple, alcool r_incompatible antibiotique.",
+      "details": "[0.5 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 114,
+      "id": 128,
+      "code": "r_node2relnode-in",
+      "description": "Relation entre un noeud (quelconque) et un noeud de relation (type = 10) - connecte le noeud d'entrée - permet de rendre le graphe connexe même avec les annotations de relations",
+      "details": "[0.5 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 115,
+      "id": 129,
+      "code": "r_require",
+      "description": "Il est demandé d'énumérer les termes nécessaires au mot mot cible... Par exemple, 'se reposer' => 'calme', ou 'pain' => 'farine'.",
+      "details": "[1 ≤ q=1 ≤ 10]"
+    },
+    {
+      "index": 116,
+      "id": 130,
+      "code": "r_is_instance_of",
+      "description": "Une instance est un individu particulier. Il s'agit d'une entité nommée (personne, lieu, organisation, etc) - par exemple, 'Jolly Jumper' est une instance de 'cheval', 'Titanic' en est une de 'transatlantique'.",
+      "details": "[conversif : r_has_instance] - [1 ≤ q=1 ≤ 3]"
+    },
+    {
+      "index": 117,
+      "id": 131,
+      "code": "r_is_concerned_by",
+      "description": "A peut être concerné par B. Par exemple, une personne a un rendez-vous a une maladie, une idée, une opinion, etc...",
+      "details": "[conversif : r_concerning] - [1 ≤ q=1 ≤ 3]"
+    },
+    {
+      "index": 118,
+      "id": 132,
+      "code": "r_symptomes-1",
+      "description": "Inverse de symptômes de la maladie : myxomatose => yeux rouges, rougeole => boutons, ...",
+      "details": "[conversif : r_has_symptomes] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 119,
+      "id": 133,
+      "code": "r_units",
+      "description": "A comme unités pour une propriété, ou une mesure. Par exemple vitesse a pour unités m/s ou km/h, etc.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 120,
+      "id": 134,
+      "code": "r_promote",
+      "description": "Qu'est-ce que le terme suivant FAVORISE ? Par exemple, un catalyseur favorise une réaction chimique.",
+      "details": "[conversif : r_promote-1] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 121,
+      "id": 135,
+      "code": "r_circumstances",
+      "description": "Les circonstances possibles pour un événements, ou un objet",
+      "details": "[0 ≤ q=1 ≤ 0]"
+    },
+    {
+      "index": 122,
+      "id": 136,
+      "code": "r_has_auteur-1",
+      "description": "Quel sont les oeuvres de l'auteur suivant ?",
+      "details": "[conversif : r_has_auteur] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 123,
+      "id": 137,
+      "code": "r_processus>agent-1",
+      "description": "(interne)",
+      "details": "[conversif : r_processus>agent] - [1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 124,
+      "id": 138,
+      "code": "r_processus>patient-1",
+      "description": "(interne)",
+      "details": "[conversif : r_processus>patient] - [1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 125,
+      "id": 139,
+      "code": "r_processus>instr-1",
+      "description": "(interne)",
+      "details": "[conversif : r_processus>instr] - [1 ≤ q=0.94 ≤ 2]"
+    },
+    {
+      "index": 126,
+      "id": 140,
+      "code": "r_node2relnode-out",
+      "description": "Relation entre un noeud (quelconque) et un noeud de relation (type = 10) - connecte le noeud de sortie - permet de rendre le graphe connexe même avec les annotations de relations",
+      "details": "[0.5 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 127,
+      "id": 141,
+      "code": "r_carac_nominale",
+      "description": "Pour un terme donné, souvent un objet, il est demandé d'en énumérer les CARACtéristiques nominales (nom) possibles/typiques. Par exemple, stylo => bille, feutre",
+      "details": "[1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 128,
+      "id": 142,
+      "code": "r_has_topic",
+      "description": "Thème lié à l'objet de départ, exemples : restaurant r_has_topic sushis, magazine r_has_topic bande dessinée",
+      "details": "[1 ≤ q=1 ≤ 1]"
+    },
+    {
+      "index": 129,
+      "id": 148,
+      "code": "r_pourvoyeur",
+      "description": "Le pourvoyeur est l'entité qui fournit l'object de l'action (le pourvoyeur est un complément d'objet indirect introduit par 'à', ...). Par exemple dans - Le client demande une pizza à la serveuse - le pourvoyeur est ici la serveuse ...",
+      "details": "[1 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 130,
+      "id": 149,
+      "code": "r_compl_agent",
+      "description": "Le complément d'agent est celui qui effectue l'action dans les formes passives. Par exemple, pour 'être mangé', la souris est l'agent et le chat le complément d'agent.",
+      "details": "[2 ≤ q=3.6 ≤ 10]"
+    },
+    {
+      "index": 131,
+      "id": 150,
+      "code": "r_has_beneficiaire",
+      "description": "Le bénéficiaire est l'entité qui tire bénéfice/préjudice de l'action (un complément d'objet indirect introduit par 'à', 'pour', ...). Par exemple dans - La sorcière donne une pomme à Blanche Neige -, la bénéficiaire est Blanche Neige ... enfin, bref, vous avez compris l'idée.",
+      "details": "[1 ≤ q=4.82 ≤ 5]"
+    },
+    {
+      "index": 132,
+      "id": 151,
+      "code": "r_descend_de",
+      "description": "Descend de (évolution)...",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 133,
+      "id": 152,
+      "code": "r_domain_subst",
+      "description": "Quels sont le ou les domaines de substitution pour ce terme quand il est utilisé comme domaine (par exemple, 'muscle' => 'anatomie du système musculaire')",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 134,
+      "id": 153,
+      "code": "r_has_prop",
+      "description": "Pour le terme donné, il faut indiquer les noms de propriétés pertinents (par exemple pour 'voiture', le 'prix', la 'puissance', la 'longueur', le 'poids', etc. On ne met que des noms et pas des adjectifs).",
+      "details": "[conversif : r_has_prop-1] - [0.5 ≤ q=0.5 ≤ 2]"
+    },
+    {
+      "index": 135,
+      "id": 154,
+      "code": "r_activ_voice",
+      "description": "Pour un verbe à la voix passive, sa voix active. Par exemple, pour 'être mangé' on aura 'manger'.",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 136,
+      "id": 155,
+      "code": "r_make_use_of",
+      "description": "Peut utiliser un objet ou produit (par exemple électricité pour frigo).",
+      "details": "[conversif : r_is_used_by] - [0.5 ≤ q=0.5 ≤ 2]"
+    },
+    {
+      "index": 137,
+      "id": 156,
+      "code": "r_is_used_by",
+      "description": "Est utilisé par (par exemple essence pour voiture).",
+      "details": "[conversif : r_make_use_of] - [0.5 ≤ q=0.89 ≤ 2]"
+    },
+    {
+      "index": 138,
+      "id": 157,
+      "code": "r_adj-nomprop",
+      "description": "Pour un adjectif, donner le nom de propriété correspondant. Par exemple, pour 'friable' -> 'friabilité'",
+      "details": "[conversif : r_nomprop-adj] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 139,
+      "id": 158,
+      "code": "r_nomprop-adj",
+      "description": "Pour un nom de propriété, donner l'adjectif correspondant. Par exemple, pour 'friabilité' -> 'friable'",
+      "details": "[conversif : r_adj-nomprop] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 140,
+      "id": 159,
+      "code": "r_adj-adv",
+      "description": "Pour un adjectif, donner l'adverbe correspondant. Par exemple, pour 'rapide' -> 'rapidement'",
+      "details": "[conversif : r_adv-adj] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 141,
+      "id": 160,
+      "code": "r_adv-adj",
+      "description": "Pour un adverbe, donner l'adjectif correspondant. Par exemple, pour 'rapidement' -> 'rapide'",
+      "details": "[conversif : r_adj-adv] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 142,
+      "id": 161,
+      "code": "r_homophone",
+      "description": "Il est demandé d'énumérer les homophones ou quasi-homophones de ce terme.",
+      "details": "[5 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 143,
+      "id": 162,
+      "code": "r_potential_confusion_with",
+      "description": "Confusion potentielle avec un autre terme (par exemple, acre et âcre, détonner et détoner).",
+      "details": "[5 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 144,
+      "id": 163,
+      "code": "r_concerning",
+      "description": "Qui concerne quelque chose ou quelqu'un. Par exemple: maladie r_concerning personne, ou disparition r_concerning emploi. (inverse de r_is_concerned_by)",
+      "details": "[conversif : r_is_concerned_by] - [5 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 145,
+      "id": 164,
+      "code": "r_adj>nom",
+      "description": "Le nom associé à l'adjectif. Par exemple, 'urinaire' -> 'urine'",
+      "details": "[conversif : r_nom>adj] - [5 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 146,
+      "id": 165,
+      "code": "r_nom>adj",
+      "description": "L'adjectif associé au nom. Par exemple, 'urine' -> 'urinaire'",
+      "details": "[conversif : r_adj>nom] - [5 ≤ q=5 ≤ 5]"
+    },
+    {
+      "index": 147,
+      "id": 166,
+      "code": "r_opinion_of",
+      "description": "L'opinion de tel groupe ou telle personne. Utilisé comme relation d'annotation.",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 148,
+      "id": 167,
+      "code": "r_has_value",
+      "description": "Une valeur associée à une propriété ou un objet",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 149,
+      "id": 168,
+      "code": "r_has_value>",
+      "description": "Une valeur associée à une propriété ou un objet",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 150,
+      "id": 169,
+      "code": "r_has_value<",
+      "description": "Une valeur associée à une propriété ou un objet",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 151,
+      "id": 170,
+      "code": "r_sing_form",
+      "description": "La forme au singulier d'un terme. Exemple : chevaux r_sing_from cheval (pas de relation inverse)",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 152,
+      "id": 171,
+      "code": "r_lieu>origine",
+      "description": "A pour origine B, saucisse de Toulouse r_lieu>origine Toulouse",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 153,
+      "id": 172,
+      "code": "r_depict",
+      "description": "Que représente le mot ? (depiction) A représente B, par exemple une photo représente une personne, un visage, un paysage, etc.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 154,
+      "id": 173,
+      "code": "r_has_prop-1",
+      "description": "Pour propriété donnée, il faut indiquer les noms de choses pertinentes ayant cette propriété (inverse de r_has_prop).",
+      "details": "[conversif : r_has_prop] - [0.5 ≤ q=0.5 ≤ 2]"
+    },
+    {
+      "index": 155,
+      "id": 174,
+      "code": "r_quantificateur-1",
+      "description": "inverse de r_quantificateur",
+      "details": "[conversif : r_quantificateur] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 156,
+      "id": 175,
+      "code": "r_promote-1",
+      "description": "Par quoi le terme suivant est favoroisé ? Par exemple, une réaction chimique est favorisée par un catalyseur.",
+      "details": "[conversif : r_promote] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 157,
+      "id": 200,
+      "code": "r_context",
+      "description": "Relation de contexte entre un terme et un noeud contexte.",
+      "details": "[0.5 ≤ q=0.97 ≤ 2]"
+    },
+    {
+      "index": 158,
+      "id": 222,
+      "code": "r_pos_seq",
+      "description": "Séquence de parties du discours (Nom, Verbe, Adjectif, Adverbe, etc.). Exemple : belle maison => Adj: Nom:",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 159,
+      "id": 333,
+      "code": "r_translation",
+      "description": "Traduction vers une autre langue.",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 160,
+      "id": 444,
+      "code": "r_link",
+      "description": "Lien vers une ressource externe (WordNet, RadLex, UMLS, Wikipedia, etc...)",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 161,
+      "id": 555,
+      "code": "r_cooccurrence",
+      "description": "co-occurences (non utilisée)",
+      "details": "[0.5 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 162,
+      "id": 666,
+      "code": "r_aki",
+      "description": "(TOTAKI) equivalent pour TOTAKI de l'association libre",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 163,
+      "id": 777,
+      "code": "r_wiki",
+      "description": "Associations issues de wikipedia...",
+      "details": "[1 ≤ q=1.5 ≤ 2]"
+    },
+    {
+      "index": 164,
+      "id": 997,
+      "code": "r_annotation_exception",
+      "description": "Relation pour indiquer qu'il s'agit d'une exception par rapport à la cible. L'autruche ne vole pas, et c'est une exception par rapport à l'oiseau prototypique.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 165,
+      "id": 998,
+      "code": "r_annotation",
+      "description": "Relation pour annoter (de façon générale) des relations",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 166,
+      "id": 999,
+      "code": "r_inhib",
+      "description": "relation d'inhibition, le terme inhibe les termes suivants... ce terme a tendance à exclure le terme associé.",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 167,
+      "id": 1000,
+      "code": "r_prev",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 168,
+      "id": 1001,
+      "code": "r_succ",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 169,
+      "id": 1002,
+      "code": "r_termgroup",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 170,
+      "id": 2000,
+      "code": "r_raff_sem-1",
+      "description": "Inverse de r_raff_sem (automatique)",
+      "details": "[conversif : r_raff_sem] - [1 ≤ q=1 ≤ 2]"
+    },
+    {
+      "index": 171,
+      "id": 2001,
+      "code": "r_learning_model",
+      "description": "(interne)",
+      "details": "[1 ≤ q=1 ≤ 2]"
+    }
+  ]
+}
